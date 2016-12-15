@@ -318,3 +318,7 @@ func (f *BloomFilter) GobDecode(data []byte) error {
 func (f *BloomFilter) Equal(g *BloomFilter) bool {
 	return f.m == g.m && f.k == g.k && f.b.Equal(g.b)
 }
+
+func (f *BloomFilter) IntersectionCardinality(g *BloomFilter) uint {
+	return f.b.IntersectionCardinality(g.b)
+}
